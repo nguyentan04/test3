@@ -1,438 +1,178 @@
-<html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
 
-  <link rel="stylesheet" href="css/style.css?v=1.4">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="asset/img/faviconced1.png?v1.8" type="image/x-icon" />
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="asset/css/iziToast.min.css?v1.8" rel="stylesheet">
+    <link href="asset/css/styleme.css?v1.8" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-061Z8R526T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  <title>SpeedForce is a Highest Paying Auto-Staking &amp; Auto-Compounding Protocol</title>
-  <meta content="Speedforce is on a mission to push web3 mass adoption by building the ultimate social network DApp, Whistle, where all your data will be backed as an NFT on the blockchain and purely under your control!" name="description">
-  <meta content="SpeedForce is a Highest Paying Auto-Staking &amp; Auto-Compounding Protocol" property="og:title">
-  <meta content="Speedforce is on a mission to push web3 mass adoption by building the ultimate social network DApp, Whistle, where all your data will be backed as an NFT on the blockchain and purely under your control!" property="og:description">
-  <meta content="https://app.speedforce.finance/wring_v1.png" property="og:image">
-  <meta content="SpeedForce is a Highest Paying Auto-Staking &amp; Auto-Compounding Protocol" property="twitter:title">
-  <meta content="Speedforce is on a mission to push web3 mass adoption by building the ultimate social network DApp, Whistle, where all your data will be backed as an NFT on the blockchain and purely under your control!" property="twitter:description">
-  <meta content="https://app.speedforce.finance/wring_v1.png" property="twitter:image">
-  <meta property="og:type" content="website">
-  <meta content="summary_large_image" name="twitter:card">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-   
-  <link href="wring_v1.png" rel="shortcut icon" type="image/x-icon">
-  <link href="wring_v1.png" rel="apple-touch-icon">
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-  <meta name="twitter:image" content="https://app.speedforce.finance/wring_v1.png">
-  <meta name="twitter:description" content="Speedforce is on a mission to push web3 mass adoption by building the ultimate social network DApp, Whistle, where all your data will be backed as an NFT on the blockchain and purely under your control!">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SpeedForce is a Highest Paying Auto-Staking &amp; Auto-Compounding Protocol">
-
-  <meta property="og:image" content="https://app.speedforce.finance/wring_v1.pngg">
+        gtag('config', 'G-061Z8R526T');
+    </script>
 </head>
-<!--Fork of titano website. simple and easy to use-->
-<body id="titano-finance">
-  <div class="container-fluid">
-    <div class="row">
-      <div id="sidebarContainer" class="col-auto" style="z-index: 1000002;">
-        <div id="sidebar" class="d-flex flex-column align-items-center pe-2 py-4">
-          <a id="logo" href="/" class="text-decoration-none mb-5 w-100 d-flex align-items-center ps-3 pe-2">
-            <img src="wring_v1.png" alt="logo-icon" class="col-2">
-            <img src="logotext.png" alt="TheWeb3Project" class="col ms-4" style="width: 100%;">
-          </a>
 
-          <ul id="sidebar-nav" class="list-unstyled p-0 py-5">
-            <li class="mb-4 py-2 px-5 rounded-pill active">
-              <a target="_blank" href="/" class="text-decoration-none text-reset d-flex align-items-center">
-                <span class="fs-5"><i class="bi bi-collection"></i></span>
-                <span class="ms-3">Dashboard</span>
-              </a>
-            </li>
-            <li class="mb-4 py-2 px-5 rounded-pill">
-              <a target="_blank" href="account.html" class="text-decoration-none text-reset d-flex align-items-center">
-                <span class="fs-5"><i class="bi bi-person-circle"></i></span>
-                <span class="ms-3">Account</span>
-              </a>
-            </li>
-            <li class="mb-4 py-2 px-5 rounded-pill">
-              <a target="_blank" href="calculator.html" class="text-decoration-none text-reset d-flex align-items-center">
-                <span class="fs-5"><i class="bi bi-calculator-fill"></i></span>
-                <span class="ms-3">Calculator</span>
-              </a>
-            </li>
-            <li class="mb-4 py-2 px-5 rounded-pill">
-              <a target="_blank" href="https://pancakeswap.finance/swap?outputCurrency=0x589E90c584DAa693E7F746DaEAa804dd5879857B" class="text-decoration-none text-reset d-flex align-items-center">
-                <span class="fs-5"><i class="bi bi-lightning-charge"></i></span>
-                <span class="ms-3">Swap</span>
-              </a>
-            </li>
-            <li class="mb-4 py-2 px-5 rounded-pill">
-              <a target="_blank" href="https://doc.speedforce.finance/" class="text-decoration-none text-reset d-flex align-items-center">
-                <span class="fs-5"><i class="bi bi-journal-text"></i></span>
-                <span class="ms-3">Docs</span>
-              </a>
-            </li>
-          </ul>
+<body>
 
-          <div class="d-flex justify-content-around w-100 px-4">
-            <a target="_blank" href="https://discord.gg/WDs9xbCWn9" class="text-decoration-none text-reset fs-5 social-icon-hover">
-              <i class="bi bi-discord"></i>
-            </a>
-            <a target="_blank" href="https://doc.speedforce.finance" class="text-decoration-none text-reset fs-5 social-icon-hover">
-              <i class="bi bi-book"></i>
-            </a>
-            <a target="_blank" href="https://medium.com/@speedforce_defi" class="text-decoration-none text-reset fs-5 social-icon-hover">
-              <i class="bi bi-medium"></i>
-            </a>            
-            <a target="_blank" href="https://twitter.com/speedforce_defi" class="text-decoration-none text-reset fs-5 social-icon-hover">
-              <i class="bi bi-twitter"></i>
-            </a>                
-            <a target="_blank" href="https://t.me/speedforceglobal" class="text-decoration-none text-reset fs-5 social-icon-hover">
-              <i class="bi bi-send-fill"></i>
-            </a>            
-            <a target="_blank" href="https://t.me/speedforceofficial" class="text-decoration-none text-reset fs-5 social-icon-hover">
-              <i class="bi bi-send-fill"></i>
-            </a>
-            <a target="_blank" href="https://www.reddit.com/user/SpeedForce_Defi" class="text-decoration-none text-reset fs-5 social-icon-hover">
-             <i class="bi bi-reddit"></i>
-            </a>            
-          </div>
+    <nav class="navbar navbar-inverse blur">
+        <div class="container">
+            <div class="navbar-header" style="width: 100%;">
+                <a class="navbar-brand" style="padding: 0px 0px;" href="https://gatesofheaven.finance/"><img src="asset/img/goh-500X200.png" style="height: 50px;" /></a>
+                <button class="btn btn-connect connect" id='btn-logout' style='display:none'><i
+            class='fa fa-power-off fa-fw'></i></button>
+                <button class="btn btn-connect connect" id='btn-login'>Connect</button>
+            </div>
         </div>
-      </div>
+    </nav>
 
-      <div id="overlay" style="z-index: 1000001;"></div>
-
-      <main class="col pt-4">
-        <div class="w-100 position-fixed end-0 top-0" style="height: 68px; z-index: 100001; background-color: #0D0F19;">
-          <div class="d-flex pt-3 px-sm-3">
-            <button type="button" id="showSidebar" class="d-lg-none btn fs-5"><i class="bi bi-list"></i></button>
-
-            <div class="dropdown ms-auto">
-              <button class="btn rounded-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true" data-bs-offset="0,14">
-                <span class="fw-medium ms-1">SF</span> <span id="price" class="ms-1 small text-secondary">$0</span>
-              </button>
-
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 52px, 0px);" data-popper-placement="bottom-start">
-                <li><a class="dropdown-item" target="_blank" href="https://pancakeswap.finance/swap?outputCurrency=0x589E90c584DAa693E7F746DaEAa804dd5879857B">Buy on Pancakeswap</a></li>
-                <li><a class="dropdown-item" target="_blank" href="https://poocoin.app/tokens/0x589e90c584daa693e7f746daeaa804dd5879857b">Chart</a></li>
-              </ul>
+    <div class="main-menu">
+        <div class="container">
+            <div class="row">
+                <div class='col-xs-3'>
+                    <a target='_blank' href='https://gatesofheaven.finance/'>Home</a>
+                </div>
+                <div class='col-xs-3'>
+                    <a target='_blank' href='https://bscscan.com/address/0x247A71Ed97913262C15387D1B94B2fDb360C68c4#code'>Contract</a>
+                </div>
             </div>
-
-            <button id="connect" type="button" class="btn rounded-1 ms-3">
-              Connect Wallet
-            </button>
-          </div>
         </div>
-
-        <div class="container pt-3">
-          <div class="px-sm-3 mt-5">
-            <div class="card bg-light border border-primary text-center p-4">
-              <div class="row row-cols-1 row-cols-sm-3">
-                <div class="col mb-3">
-                  <div class="text-secondary mb-1">Market Cap</div>
-                  <h4 id="mcap" class="fw-bold">$0</h4>
-                </div>
-
-                <div class="col mb-3">
-                  <div class="text-secondary mb-1">$SF Price</div>
-                  <h4 id="price" class="fw-bold">$0</h4>
-                </div>
-
-                <div class="col mb-3">
-                  <div class="text-secondary mb-1">Next Rebase</div>
-                  <h4 id="nextRebase" class="fw-bold">Every 15 Mins</h4>
-                </div>
-
-                <div class="col mb-3">
-                  <div class="text-secondary mb-1">Circulating Supply</div>
-                  <h4 id="cirSupply" class="fw-bold">0</h4>
-                </div>
-
-                <div class="col mb-3">
-                  <div class="text-secondary mb-1">Backed Liquidity</div>
-                  <h4 id="backedLiq" class="fw-bold">0</h4>
-                </div>
-
-                <div class="col mb-3">
-                  <div class="text-secondary mb-1">Burned Supply</div>
-                  <h4 id="burned" class="fw-bold">0</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-sm-6 mt-5 px-sm-4">
-              <div class="card bg-light border border-primary p-4">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="text-secondary">
-                    The Volcano Burn (TVB) Market Value
-                  </span>
-
-                  <!-- <span class="text-primary border border-primary shadow rounded-pill py-2 px-3 small">
-                    +0.00%
-                  </span> -->
-                </div>
-
-                <h3 id="">$0</h3>
-              </div>
-            </div>
-
-            <div class="col-sm-6 mt-5 px-sm-4">
-              <div class="card bg-light border border-primary p-4">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="text-secondary">
-                    The $SF Treasury (TST) Market Value
-                  </span>
-
-                  <!-- <span class="text-primary border border-primary shadow rounded-pill py-2 px-3 small">
-                    +0.00%
-                  </span> -->
-                </div>
-
-                <h3 id="treasury">$0</h3>
-              </div>
-            </div>
-
-            <div class="col-sm-6 mt-5 px-sm-4">
-              <div class="card bg-light border border-primary p-4">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="text-secondary">
-                    BNB Liquidity Value
-                  </span>
-
-                  <!-- <span class="text-primary border border-primary shadow rounded-pill py-2 px-3 small">
-                    +0.00%
-                  </span> -->
-                </div>
-
-                <h3 id="liquidity">$0</h3>
-              </div>
-            </div>
-
-            <div class="col-sm-6 my-5 px-sm-4">
-              <div class="card bg-light border border-primary p-4">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="text-secondary">
-                    $SF Trust Fund (STF) Market Value
-                  </span>
-
-                  <!-- <span class="text-primary border border-primary shadow rounded-pill py-2 px-3 small">
-                    +0.00%
-                  </span> -->
-                </div>
-
-                <h3 id="trustFund">$0</h3>
-              </div>
-            </div>
-            <button id="rebase" class="btn rounded-1 show" type="button" data-bs-toggle="dropdown" aria-expanded="true" data-bs-offset="0,14">
-              <span class="fw-medium ms-1">MANUAL REBASE</span>
-              <span id="lastRebase"></span>
-            </button>
-          </div>
-        </div>
-      </main>
     </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/rangeslider.js@2.3.3/dist/rangeslider.min.js"></script>
+    <div class='mainview'>
+        <div class='container'>
+            <div class='row'>
+                <div class="col-xs-12 col-md-8">
+                    <div class='col-xs-12 col-md-4'>
+                        <div class="box blur" style="margin-top: 30px;">
+                            <h1>Presale Tokens</h1>
+                            <div class="row" style="min-height: 100px;">
+                                <div class="col-xs-12 col-md-10">
+                                    <div class="stats_acc"><span id='presaleToken'>0</span></div>
+                                    <div><span class='cur'>GOH</span></div>
+                                </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/gh/upfinity-main/TheWeb3ProjectAssets/js/web3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/upfinity-main/TheWeb3ProjectAssets/js/detect-provider.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/upfinity-main/TheWeb3ProjectAssets/js/ethers.umd.min.js"></script>
-  <script src="js/base.js?v=1.14"></script>
-  
-  <div id="NULL" style="width: 1px; display: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-xs-12 col-md-4'>
+                        <div class="box blur" style="margin-top: 30px;">
+                            <h1>Presale Price</h1>
+                            <div class="row" style="min-height: 100px;">
+                                <div class="col-xs-12 col-md-10">
+                                    <div class="stats_acc"><span id='tokenPrice'>0</span></div>
+                                    <div><span class='cur'>GOH = 1BNB</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-xs-12 col-md-4'>
+                        <div class="box blur" style="margin-top: 30px;">
+                            <h1>Total Whitelist</h1>
+                            <div class="row" style="min-height: 100px;">
+                                <div class="col-xs-12 col-md-10">
+                                    <div class="stats_acc"><span id='totalWhitelists'>0</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-xs-12 col-md-4'>
+                        <div class="box blur" style="margin-top: 30px;">
+                            <h1>Sold Tokens</h1>
+                            <div class="row" style="min-height: 100px;">
+                                <div class="col-xs-12 col-md-10">
+                                    <div class="stats_acc"><span id='tokenBalance'>0</span></div>
+                                    <div><span class='cur'>GOH</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-xs-12 col-md-4'>
+                        <div class="box blur" style="margin-top: 30px;">
+                            <h1>Presale Rate</h1>
+                            <div class="row" style="min-height: 100px;">
+                                <div class="col-xs-12 col-md-10">
+                                    <div class="stats_acc"><span id='tokenRate'>0</span></div>
+                                    <div><span class='cur'>USD</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-xs-12 col-md-4'>
+                        <div class="box blur" style="margin-top: 30px;">
+                            <h1>Total Contributors</h1>
+                            <div class="row" style="min-height: 100px;">
+                                <div class="col-xs-12 col-md-10">
+                                    <div class="stats_acc"><span id='totalUsers'>0</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-xs-12 col-md-4'>
+                    <div class="box blur" style="margin-top: 30px;">
+                        <h1 id="salestatus"></h1>
+                        <div class="row" style="min-height: 40px;">
+                            <div class="col-xs-12 col-md-3">
+                                <div class="stats_acc"><span id="sp_times" class="total_deposit_1"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="boxon" class="box blur" style="display: none; margin-top: 30px; min-height: 90px;">
+                        <h1>Presale</h1>
+                        <div style="margin-top: 10px;">Min <span id='minbuyAmount'></span> BNB, Max <span id='maxbuyAmount'></span> BNB</div>
+                        <div style="max-width: 200px;">
+                            <input class='form-control form-deposit' type='text' id='amountBuy' placeholder="Enter BNB Amount">
+                        </div>
+                        <div>
+                            <button class="btn btn-connect btn-withdraw" style="margin: 5px 0px;border-top: none;border-left: none;border-bottom: none;font-size: 20px;padding: 6px 20px;" id='buttonBuy'>Buy</button>
+                        </div>
+                        <div style="margin-top: 5px; font-size: 9px;">- Claim available when sale ended</div>
+                    </div>
+                    <div id="boxend" class="box blur" style="display: none; margin-top: 30px;min-height: 90px;">
+                        <h1>Your Token</h1>
+                        <div class="stats_acc">
+                            <span id='yougoh'>0.00</span> <span>GOH</span>
+                        </div>
+                        <div>
+                            <button class="btn btn-connect btn-withdraw" style="display: none; margin: 5px 0px;border-top: none;border-left: none;border-bottom: none;font-size: 20px;padding: 6px 20px;" id='buttonWithdraw'>Force Withdraw</button>
+                            <button class="btn btn-connect btn-withdraw" style="display: none; margin: 5px 0px;border-top: none;border-left: none;border-bottom: none;font-size: 20px;padding: 6px 20px;" id='buttonClaim'>Claim</button>
+                        </div>
+                        <div id="buydesc" style="display: none; margin-top: 5px; font-size: 9px;">- 10% deduction for mandatory refunds</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <script>
-    document.getElementById("showSidebar").addEventListener("click", function () {
-      document.getElementById("sidebarContainer").classList.add("show");
-      document.getElementById("overlay").style.display = "block"
-    });
+    <div class='footer' style="padding: 60px 0px; ">
+        <div class='container'>
+            <div class='row'>
+                <div class='col-xs-12 col-md-12'>
+                    <div style="color: #ffff;font-weight: 100;font-size: 16px;text-align: center;margin-top: 15px;">Powered by &copy;2022 <span style="color: #ffff;">Gates Of Heaven</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="hd_startdate">
+    <script type="text/javascript" src="asset/js/web3.minced1.js?v1.8"></script>
+    <script type="text/javascript" src="asset/js/web3modal-indexced1.js?v1.8"></script>
+    <script type="text/javascript" src="asset/js/web3-provider.minced1.js?v1.8"></script>
+    <script type="text/javascript" src="asset/js/jquery.minced1.js?v1.8"></script>
+    <script type="text/javascript" src="asset/js/iziToast.minced1.js?v1.8"></script>
+    <script type="text/javascript" src="asset/js/cccbd3d215ced1.js?v1.8" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="asset/js/indexced1.js?v1.8"></script>
+</body>
 
-    document.getElementById("overlay").addEventListener("click", function () {
-      document.getElementById("sidebarContainer").classList.remove("show");
-      document.getElementById("overlay").style.display = "none"
-    });
-
-    
-    let balance;
-    async function doAfterConnect() {
-      displayText('#connect', SHORTADR(CURADR));
-
-      balance = await CONTS['sf'].balanceOf(CURADR);
-      balance = balance / BNBDIV5;
-
-      displayText("#balance", `${COMMA(ROUND(balance, 3))} $SF`);
-    }
-
-    async function runManualRebase() {
-      await SEND_TX('sf', 'manualRebase', []);
-    }
-
-    let bnbPrice;
-    let price;
-
-    var inInterval = setInterval(function(){
-      getData();      
-    }, 20000);
-
-    (async () => {
-      // do global
-      select('#connect').onclick = async () => { await conn(); };
-    })();
-
-    async function  getData()  {
-      bnbPrice = 1 / (await getPrice('busd'));
-
-      let totalSupply = await CONTS['sf'].totalSupply();
-      totalSupply = totalSupply / BNBDIV5;
-
-      let blackHoleAmount = await CONTS['sf'].balanceOf("0xbc5ecd451363E980A9917e209EaD06CC34d63461");
-      blackHoleAmount = blackHoleAmount / BNBDIV;
-      displayText("#burned", `${COMMA(ROUND(blackHoleAmount, 3))}`);
-      displayText("#theBlackHole", `$${COMMA(ROUND(blackHoleAmount * bnbPrice))}`);
-
-      let circulatingSupply = totalSupply - blackHoleAmount;
-      displayText("#cirSupply", `${COMMA(ROUND(circulatingSupply, 3))}`);
-
-      let trustFundBalance = await getBalance("0xF01402e8decAED8abd4d326e966fc474C0046CfE");
-      trustFundBalance = trustFundBalance / BNBDIV;
-      displayText("#trustFund", `$${COMMA(ROUND(trustFundBalance * bnbPrice, 3))}`);
-
-      let treasuryBalance = await getBalance("0xA758944b9a8f0EfDb8d9318cf2f417911B09a835");
-      treasuryBalance = treasuryBalance / BNBDIV;
-      displayText("#treasury", `$${COMMA(ROUND(treasuryBalance * bnbPrice, 3))}`);
-
-      let marketingBalance = await getBalance("0xA758944b9a8f0EfDb8d9318cf2f417911B09a835");
-      marketingBalance = marketingBalance / BNBDIV;
-
-      let liqReserves = await CONTS['pairsf'].getReserves();
-      let liqBnb = liqReserves[1] / BNBDIV; 
-      displayText("#liquidity", `$${COMMA(ROUND(liqBnb * bnbPrice, 0))}`);
-      if (liqBnb != 0) {
-        displayText("#backedLiq", `${COMMA(ROUND((trustFundBalance + treasuryBalance + marketingBalance) / liqBnb * 100, 0))}%`);
-      }
-      let liqWeb3 = liqReserves[0] / BNBDIV;
-      let liqRate = 0
-      if (liqWeb3 != 0) {
-        liqRate = liqBnb / liqWeb3;
-      }
-      price =  (liqRate * bnbPrice) / 10**13;
-      displayText("#price", `$${COMMA(ROUND(price, 3))}`);
-
-      let mcap = price * totalSupply;
-      displayText("#mcap", `$${COMMA(ROUND(mcap))}`);
-
-      // manual rebase
-      select('#rebase').onclick = async () => { await runManualRebase(); };
-
-      // let curBlock = await PROVIDER.getBlock();
-      // curBlock = curBlock['number'];
-      // let lastRebaseBlock = await CONTS['sf']._lastRebaseBlock();
-      // lastRebaseBlock = INT(lastRebaseBlock);
-      // let lastRebaseTime = (curBlock - lastRebaseBlock) * 3;
-      // displayText("#lastRebase", `${lastRebaseBlock}, ${curBlock}, ${lastRebaseTime}`);
-
-
-
-      await getCurAdr();
-      if (CURADR == null) {
-        // connect wallet button
-      } else {
-        doAfterConnect();
-        // display address
-      }
-
-      // let [res, data] = await GAS('sf', 'manualRebase', []);
-      // if (res == true) {
-      //   return;
-      // } else {
-      //   gasEstimation = data;
-      //   displayText("#lastRebase", `${lastRebaseBlock}, ${curBlock}, ${lastRebaseTime}, ${gasEstimation}`);
-      // }
-    }
-   
-    (async () => {
-      // do global
-      select('#connect').onclick = async () => { await conn(); };
-
-      bnbPrice = 1 / (await getPrice('busd'));
-
-      let totalSupply = await CONTS['sf'].totalSupply();
-      totalSupply = totalSupply / BNBDIV5;      
-      let blackHoleAmount = await CONTS['sf'].balanceOf("0xbc5ecd451363E980A9917e209EaD06CC34d63461");
-      blackHoleAmount = blackHoleAmount / BNBDIV;
-      displayText("#burned", `${COMMA(ROUND(blackHoleAmount, 3))}`);
-
-      let circulatingSupply = totalSupply - blackHoleAmount;
-      displayText("#cirSupply", `${COMMA(ROUND(circulatingSupply, 3))}`);
-
-      let trustFundAdr = "0xF01402e8decAED8abd4d326e966fc474C0046CfE";
-      let trustFundBalance = (await getBalance(trustFundAdr)) / BNBDIV * bnbPrice;
-      trustFundBalance += (await CONTS['busd'].balanceOf(trustFundAdr)) / BNBDIV;
-      displayText("#trustFund", `$${COMMA(ROUND(trustFundBalance, 3))}`);
-
-      let treasuryAdr = "0xA758944b9a8f0EfDb8d9318cf2f417911B09a835";
-      let treasuryBalance = (await getBalance(treasuryAdr)) / BNBDIV * bnbPrice;
-      trustFundBalance += (await CONTS['busd'].balanceOf(treasuryAdr)) / BNBDIV;
-
-      let marketingAdr = "0xA758944b9a8f0EfDb8d9318cf2f417911B09a835";
-      let marketingBalance = (await getBalance(marketingAdr)) / BNBDIV * bnbPrice;
-      marketingBalance += (await CONTS['busd'].balanceOf(marketingAdr)) / BNBDIV;
-      displayText("#treasury", `$${COMMA(ROUND(trustFundBalance + marketingBalance, 3))}`);
-
-      let liqReserves = await CONTS['pairsf'].getReserves();
-      let liqBnb = liqReserves[1] / BNBDIV; 
-      displayText("#liquidity", `$${COMMA(ROUND(liqBnb * bnbPrice, 0))}`);
-      if (liqBnb != 0) {
-        displayText("#backedLiq", `${COMMA(ROUND((trustFundBalance + treasuryBalance + marketingBalance) / liqBnb * 100, 0))}%`);
-      }
-      let liqWeb3 = liqReserves[0] / BNBDIV;
-      let liqRate = 0
-      if (liqWeb3 != 0) {
-        liqRate = liqBnb / liqWeb3;
-      }
-      price =  (liqRate * bnbPrice) / 10**13;
-      displayText("#price", `$${COMMA(ROUND(price, 3))}`);
-      displayText("#theBlackHole", `$${COMMA(ROUND(blackHoleAmount * price))}`);
-
-      let mcap = price * circulatingSupply;
-      displayText("#mcap", `$${COMMA(ROUND(mcap))}`);
-      
-      // manual rebase
-      select('#rebase').onclick = async () => { await runManualRebase(); };
-
-      // let curBlock = await PROVIDER.getBlock();
-      // curBlock = curBlock['number'];
-      // let lastRebaseBlock = await CONTS['sf']._lastRebaseBlock();
-      // lastRebaseBlock = INT(lastRebaseBlock);
-      // let lastRebaseTime = (curBlock - lastRebaseBlock) * 3;
-      // displayText("#lastRebase", `${lastRebaseBlock}, ${curBlock}, ${lastRebaseTime}`);
-      
-
-
-      await getCurAdr();
-      if (CURADR == null) {
-        // connect wallet button
-        return;
-      }
-      await doAfterConnect();
-
-      // let [res, data] = await GAS('sf', 'manualRebase', []);
-      // if (res == true) {
-      //   return;
-      // } else {
-      //   gasEstimation = data;
-      //   displayText("#lastRebase", `${lastRebaseBlock}, ${curBlock}, ${lastRebaseTime}, ${gasEstimation}`);
-      // }
-      $(function () {
-        $('[data-bs-toggle="tooltip"]').tooltip();
-      });
-    })();
-  
-  </script>
-
-
-</body></html>
+</html>
