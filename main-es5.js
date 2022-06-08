@@ -221,6 +221,7 @@ var AppComponent = /** @class */ (function () {
         this.isMenuClick = false;
         this.router.events.subscribe(function (event) {
             if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
+                _this.isMenuClick = false;
                 _this.currentUrl = event.url;
                 console.log(_this.currentUrl);
                 //check mobile
