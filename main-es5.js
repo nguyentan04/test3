@@ -219,6 +219,8 @@ var AppComponent = /** @class */ (function () {
         this.menuClassShow = "flex-1 flex flex-col transition-all duration-300 background-layout dark:text-white md:pl-14";
         this.isDesktop = true;
         this.isMenuClick = false;
+        //redirect to dashboard
+        this.router.navigateByUrl('/dashboard');
         this.router.events.subscribe(function (event) {
             if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
                 _this.isMenuClick = false;
