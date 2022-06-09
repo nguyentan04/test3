@@ -6864,7 +6864,7 @@ var NullViewportScroller = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "core", function() { return core; });
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "core", function() { return core; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompilerConfig", function() { return CompilerConfig; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "preserveWhitespacesDefault", function() { return preserveWhitespacesDefault; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isLoweredSymbol", function() { return isLoweredSymbol; });
@@ -35154,6 +35154,7 @@ publishFacade(_global);
 
 //# sourceMappingURL=compiler.js.map
 
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -35166,7 +35167,7 @@ publishFacade(_global);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵangular_packages_core_core_r", function() { return APPLICATION_MODULE_PROVIDERS; });
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵangular_packages_core_core_r", function() { return APPLICATION_MODULE_PROVIDERS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵangular_packages_core_core_o", function() { return _iterableDiffersFactory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵangular_packages_core_core_p", function() { return _keyValueDiffersFactory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵangular_packages_core_core_q", function() { return _localeFactory; });
@@ -64289,6 +64290,7 @@ var NgModuleFactory_ = /** @class */ (function (_super) {
 
 //# sourceMappingURL=core.js.map
 
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 

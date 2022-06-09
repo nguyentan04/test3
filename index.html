@@ -14,9 +14,116 @@
 <body>
   <app-root></app-root>
 <script src="runtime-es2015.js" type="module"></script><script src="polyfills-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule></script><script src="polyfills-es5.js" nomodule></script><script src="styles-es2015.js" type="module"></script><script src="styles-es5.js" nomodule></script><script src="vendor-es2015.js" type="module"></script><script src="main-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule></script><script src="main-es5.js" nomodule></script></body>
-<script src="https://cdn.jsdelivr.net/npm/web3@1.3.5/dist/web3.min.js"></script>
-<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+<script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+<script type="text/javascript" src="https://unpkg.com/evm-chains/lib/index.js"></script>
+<script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+<script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
+<script type="text/javascript" src="init.js?v=1.59"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 <script>
+  // Unpkg imports
+  const Web3Modal = window.Web3Modal.default;
+  const WalletConnectProvider = window.WalletConnectProvider.default;
+  const EvmChains = window.EvmChains;
+  const Fortmatic = window.Fortmatic;
+    
+  // Web3modal instance
+  let web3Modal
+    
+  // Chosen wallet provider given by the dialog window
+  let provider;
+
+  function init() { 
+   console.log("Initializing example");
+    //console.log("WalletConnectProvider is", WalletConnectProvider);
+    //console.log("Fortmatic is", Fortmatic);
+
+    // Tell Web3modal what providers we have available.
+    // Built-in web browser provider (only one can exist as a time)
+    // like MetaMask, Brave or Opera is added automatically by Web3modal
+    const providerOptions = {
+        walletconnect: {
+            package: window.WalletConnectProvider.default,
+            options: {
+                rpc: {
+                    '1': 'https://bsc-dataseed1.defibit.io',
+                    '56': 'https://bsc-dataseed1.defibit.io',
+                },
+            }
+        }
+    };
+
+    web3Modal = new Web3Modal({
+        cacheProvider: false, // optional
+        providerOptions, // required
+    });
+ } 
+ init();
+
+/**
+* Connect wallet button pressed.
+*/
+async function onConnect() {
+ console.log("Opening a dialog", web3Modal);
+  try {
+    provider = await web3Modal.connect();
+  } catch(e) {
+     console.log("Could not get a wallet connection", e);
+  return;
+  }
+
+  // Subscribe to accounts change
+  provider.on("accountsChanged", (accounts) => {
+      fetchAccountData();
+  });
+
+  // Subscribe to chainId change
+  provider.on("chainChanged", (chainId) => {
+      fetchAccountData();
+  });
+
+    // Subscribe to networkId change
+    provider.on("networkChanged", (networkId) => {
+        fetchAccountData();
+    });
+
+    await refreshAccountData();
+}
+async function refreshAccountData() {
+    await fetchAccountData(provider);
+}
+
+async function fetchAccountData() {
+    // Get a Web3 instance for the wallet
+    const web3 = new Web3(provider);
+
+   console.log("Web3 instance is", web3);  
+
+    // Get list of accounts of the connected wallet
+    const accounts = await web3.eth.getAccounts();
+
+    // MetaMask does not give you all accounts, only the selected account
+   console.log("Got accounts", accounts);
+    selectedAccount = accounts[0];  
+
+    // Go through all accounts and get their ETH balance
+    const rowResolvers = accounts.map(async (address) => {
+    const balance = await web3.eth.getBalance(address);
+    // ethBalance is a BigNumber instance
+    // https://github.com/indutny/bn.js/
+    const ethBalance = web3.utils.fromWei(balance, "ether");
+    const humanFriendlyBalance = parseFloat(ethBalance).toFixed(4);   
+    balanceBnb = humanFriendlyBalance;
+
+    //update data
+    selectedAccount = selectedAccount.substring(0, 15)+"...";
+
+    });
+}
+
+
 
 </script>
 </html>
