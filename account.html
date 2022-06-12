@@ -1,4 +1,7 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +12,10 @@
   <meta content="KeepRunning is on a mission to push web3 mass adoption by building the ultimate social network DApp, Whistle, where all your data will be backed as an NFT on the blockchain and purely under your control!" name="description">
   <meta content="KeepRunning | Run For A Better Life" property="og:title">
   <meta content="KeepRunning is on a mission to push web3 mass adoption by building the ultimate social network DApp, Whistle, where all your data will be backed as an NFT on the blockchain and purely under your control!" property="og:description">
-
+  <meta content="https://app.KeepRunning.finance/wring_v1.png" property="og:image">
   <meta content="KeepRunning | Run For A Better Life" property="twitter:title">
   <meta content="KeepRunning is on a mission to push web3 mass adoption by building the ultimate social network DApp, Whistle, where all your data will be backed as an NFT on the blockchain and purely under your control!" property="twitter:description">
-
+  <meta content="https://app.KeepRunning.finance/wring_v1.png" property="twitter:image">
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -25,10 +28,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="KeepRunning | Run For A Better Life">
 
-  <meta property="og:image" content="https://app.KeepRunning.finance/wring_v1.pngg">
+  <meta property="og:image" content="https://app.KeepRunning.finance/wring_v1.png">
 </head>
-<!--Fork of titano website. simple and easy to use-->
-<body id="titano-finance">
+<body id="titano-finance" style="margin-bottom: 100px;">
   <div class="container-fluid" style=" background-color: #282b30; ">
     <div class="row">
       <div id="sidebarContainer" class="col-auto" style="z-index: 1000002;">
@@ -39,13 +41,13 @@
           </a>
 
           <ul id="sidebar-nav" class="list-unstyled p-0 py-5">
-            <li class="mb-4 py-2 px-5 rounded-pill active">
+            <li class="mb-4 py-2 px-5 rounded-pill">
               <a target="_blank" href="/" class="text-decoration-none text-reset d-flex align-items-center">
                 <span class="fs-5"><i class="bi bi-collection"></i></span>
                 <span class="ms-3">Dashboard</span>
               </a>
             </li>
-            <li class="mb-4 py-2 px-5 rounded-pill">
+            <li class="mb-4 py-2 px-5 rounded-pill active">
               <a target="_blank" href="account.html" class="text-decoration-none text-reset d-flex align-items-center">
                 <span class="fs-5"><i class="bi bi-person-circle"></i></span>
                 <span class="ms-3">Account</span>
@@ -70,7 +72,6 @@
               </a>
             </li>
           </ul>
-
           <div class="d-flex justify-content-around w-100 px-4">
             <a target="_blank" href="https://discord.gg/C7YQxeFr4B" class="text-decoration-none text-reset fs-5 social-icon-hover">
               <i class="bi bi-discord"></i>
@@ -105,11 +106,11 @@
             <button type="button" id="showSidebar" class="d-lg-none btn fs-5"><i class="bi bi-list"></i></button>
 
             <div class="dropdown ms-auto">
-              <button class="btn rounded-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true" data-bs-offset="0,14">
+              <button class="btn rounded-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,14">
                 <span class="fw-medium ms-1">KR</span> <span id="price" class="ms-1 small text-secondary">$0</span>
               </button>
 
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 52px, 0px);" data-popper-placement="bottom-start">
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" target="_blank" href="https://pancakeswap.finance/swap?outputCurrency=0x589E90c584DAa693E7F746DaEAa804dd5879857B">Buy on Pancakeswap</a></li>
                 <li><a class="dropdown-item" target="_blank" href="https://poocoin.app/tokens/0x589e90c584daa693e7f746daeaa804dd5879857b">Chart</a></li>
               </ul>
@@ -122,110 +123,114 @@
         </div>
 
         <div class="container pt-3">
-          <div class="px-sm-3 mt-5">
-            <div class="card bg-light border border-primary text-center p-4">
-              <div class="row row-cols-1 row-cols-sm-3">
-                <div class="col mb-3">
-                  <div class="text-secondary mb-1">Market Cap</div>
-                  <h4 id="mcap" class="fw-bold">$0</h4>
+          <div class="col-xl-8 mx-auto">
+            <div class="card bg-light border border-primary p-4 mt-5">
+              <span class="text-secondary">Total Earned</span>
+              <h1 id="totalEarnedInUsd" class="text-primary fw-bold my-2">$0.000</h1>
+              <span id="totalEarned" class="text-secondary">0.000 $KR (+0.000%)</span>
+            </div>
+
+            <div class="card bg-light border border-primary mt-5">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="p-4">
+                    <span class="text-secondary">APY</span>
+                    <h4 id="apy" class="fw-bold my-2">0%</h4>
+                    <span class="text-secondary">Daily ROI 2.301279%</span>
+                  </div>
                 </div>
 
-                <div class="col mb-3">
-                  <div class="text-secondary mb-1">$KR Price</div>
-                  <h4 id="price" class="fw-bold">$0</h4>
-                </div>
-
-                <div class="col mb-3">
-                  <div class="text-secondary mb-1">Next Rebase</div>
-                  <h4 id="nextRebase" class="fw-bold">Every 15 Mins</h4>
-                </div>
-
-                <div class="col mb-3">
-                  <div class="text-secondary mb-1">Circulating Supply</div>
-                  <h4 id="cirSupply" class="fw-bold">0</h4>
-                </div>
-
-                <div class="col mb-3">
-                  <div class="text-secondary mb-1">Backed Liquidity</div>
-                  <h4 id="backedLiq" class="fw-bold">0</h4>
-                </div>
-
-                <div class="col mb-3">
-                  <div class="text-secondary mb-1">Burned Supply</div>
-                  <h4 id="burned" class="fw-bold">0</h4>
+                <div class="col-sm-6">
+                  <div class="card bg-light p-4">
+                    <span class="text-secondary">Your Balance</span>
+                    <h4 id="balanceInUsd" class="fw-bold my-2">$0.000</h4>
+                    <span id="balance" class="text-secondary">0.000 $KR</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="col-sm-6 mt-5 px-sm-4">
-              <div class="card bg-light border border-primary p-4">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="text-secondary">
-                    The Volcano Burn (TVB) Market Value
-                  </span>
-
-                  <!-- <span class="text-primary border border-primary shadow rounded-pill py-2 px-3 small">
-                    +0.00%
-                  </span> -->
+            <div class="card bg-light border border-primary mt-5">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="p-4">
+                    <span class="text-secondary">Next Rebase:</span>
+                    <h4 class="fw-bold my-2">Every 15 Mins</h4>
+                    <span class="text-secondary">Interest Coming In Your Wallet</span>
+                  </div>
                 </div>
 
-                <h3 id="">$0</h3>
+                <div class="col-sm-6">
+                  <div class="card bg-light p-4">
+                    <span class="text-secondary">Your Earnings / Daily</span>
+                    <h4 id="nextDailyRewardInUsd" class="fw-bold my-2">$0.000</h4>
+                    <span id="nextDailyReward" class="text-secondary">0.000 $KR</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="col-sm-6 mt-5 px-sm-4">
-              <div class="card bg-light border border-primary p-4">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="text-secondary">
-                    The $KR Treasury (TST) Market Value
-                  </span>
-
-                  <!-- <span class="text-primary border border-primary shadow rounded-pill py-2 px-3 small">
-                    +0.00%
-                  </span> -->
+            <div class="card bg-light border border-primary p-3 p-sm-4 mt-5">
+              <div class="row justify-centent-between">
+                <div class="col">
+                  Current $KR Price
                 </div>
 
-                <h3 id="treasury">$0</h3>
+                <div id="price" class="col-auto text-primary">
+                  $0.000
+                </div>
               </div>
-            </div>
 
-            <div class="col-sm-6 mt-5 px-sm-4">
-              <div class="card bg-light border border-primary p-4">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="text-secondary">
-                    BNB Liquidity Value
-                  </span>
-
-                  <!-- <span class="text-primary border border-primary shadow rounded-pill py-2 px-3 small">
-                    +0.00%
-                  </span> -->
+              <div class="row justify-centent-between mt-4">
+                <div class="mt-2 col">
+                  Next 1 hour Reward Amount
                 </div>
 
-                <h3 id="liquidity">$0</h3>
+                <div id="nexthourReward" class="mt-2 col-auto">
+                  0.000 $KR
+                </div>
               </div>
-            </div>
 
-            <div class="col-sm-6 my-5 px-sm-4">
-              <div class="card bg-light border border-primary p-4">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="text-secondary">
-                    $KR Trust Fund (STF) Market Value
-                  </span>
-
-                  <!-- <span class="text-primary border border-primary shadow rounded-pill py-2 px-3 small">
-                    +0.00%
-                  </span> -->
+              <div class="row justify-centent-between mt-4">
+                <div class="mt-2 col">
+                  Next 1 hour Reward Amount USD
                 </div>
 
-                <h3 id="trustFund">$0</h3>
+                <div id="nexthourRewardInUsd" class="mt-2 col-auto text-primary">
+                  $0.000
+                </div>
+              </div>
+
+              <div class="row justify-centent-between mt-4">
+                <div class="mt-2 col">
+                  Next 1 hour Reward Yield
+                </div>
+
+                <div class="mt-2 col-auto">
+                  0.094844%
+                </div>
+              </div>
+
+              <div class="row justify-centent-between mt-4">
+                <div class="mt-2 col">
+                  ROI (30-Day Rate)
+                </div>
+
+                <div id="nextMonthReward" class="mt-2 col-auto text-primary">
+                  0.000 $KR
+                </div>
+              </div>
+
+              <div class="row justify-centent-between mt-4">
+                <div class="mt-2 col">
+                  ROI (30-Day Rate) USD
+                </div>
+
+                <div id="nextMonthRewardInUsd" class="mt-2 col-auto text-primary">
+                  $0.000
+                </div>
               </div>
             </div>
-            <button id="rebase" class="btn rounded-1 show" type="button" data-bs-toggle="dropdown" aria-expanded="true" data-bs-offset="0,14">
-              <span class="fw-medium ms-1">MANUAL REBASE</span>
-              <span id="lastRebase"></span>
-            </button>
           </div>
         </div>
       </main>
@@ -242,36 +247,51 @@
   <script src="https://cdn.jsdelivr.net/gh/upfinity-main/TheWeb3ProjectAssets/js/detect-provider.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/upfinity-main/TheWeb3ProjectAssets/js/ethers.umd.min.js"></script>
   <script src="js/base.js?v=1.14"></script>
-  
-  <div id="NULL" style="width: 1px; display: none;"></div>
 
   <script>
     document.getElementById("showSidebar").addEventListener("click", function () {
       document.getElementById("sidebarContainer").classList.add("show");
       document.getElementById("overlay").style.display = "block"
-    });
+    })
 
     document.getElementById("overlay").addEventListener("click", function () {
       document.getElementById("sidebarContainer").classList.remove("show");
       document.getElementById("overlay").style.display = "none"
-    });
+    })
 
-    
+
+    let bnbPrice;
+
     let balance;
     async function doAfterConnect() {
       displayText('#connect', SHORTADR(CURADR));
 
       balance = await CONTS['sf'].balanceOf(CURADR);
       balance = balance / BNBDIV5;
+      
+      bnbPrice = 1 / (await getPrice('busd'));
 
-      displayText("#balance", `${COMMA(ROUND(balance, 3))} $KR`);
+      displayText("Estimate your return", `${COMMA(ROUND(balance, 3))} $KR`);
+      displayText("#balanceInUsd", `$${COMMA(ROUND(balance * price, 3))}`);
+      
+      let dailyRate = 0.0230127917189176;
+      displayText("#nextDailyReward", `${COMMA(ROUND(balance * dailyRate, 3))} $KR`);
+      displayText("#nextDailyRewardInUsd", `$${COMMA(ROUND(balance * dailyRate * price, 3))}`);
+
+      let rebaseRate = 0.00000079;
+      displayText("#nextRebaseReward", `${COMMA(ROUND(balance * rebaseRate, 3))} $KR`);
+      displayText("#nextRebaseRewardInUsd", `$${COMMA(ROUND(balance * rebaseRate * price, 3))}`);
+
+      let hourRate = 0.0009484491193146;
+      displayText("#nexthourReward", `${COMMA(ROUND(balance * hourRate, 3))} $KR`);
+      displayText("#nexthourRewardInUsd", `$${COMMA(ROUND(balance * hourRate * price, 3))}`);
+
+      let MonthRate = 0.978936799350339;
+      displayText("#nextMonthReward", `${COMMA(ROUND(balance * MonthRate, 3))} $KR`);
+      displayText("#nextMonthRewardInUsd", `$${COMMA(ROUND(balance * MonthRate * price, 3))}`);
     }
 
-    async function runManualRebase() {
-      await SEND_TX('sf', 'manualRebase', []);
-    }
-
-    let bnbPrice;
+    
     let price;
 
     var inInterval = setInterval(function(){
@@ -283,16 +303,15 @@
       select('#connect').onclick = async () => { await conn(); };
     })();
 
-    async function  getData()  {
+    async function getData() {     
       bnbPrice = 1 / (await getPrice('busd'));
 
       let totalSupply = await CONTS['sf'].totalSupply();
-      totalSupply = totalSupply / BNBDIV5;
-
+      totalSupply = totalSupply / BNBDIV5;      
       let blackHoleAmount = await CONTS['sf'].balanceOf("0xbc5ecd451363E980A9917e209EaD06CC34d63461");
       blackHoleAmount = blackHoleAmount / BNBDIV;
       displayText("#burned", `${COMMA(ROUND(blackHoleAmount, 3))}`);
-      displayText("#theBlackHole", `$${COMMA(ROUND(blackHoleAmount * bnbPrice))}`);
+      displayText("#theBlackHole", `$${COMMA(ROUND(blackHoleAmount * price))}`);
 
       let circulatingSupply = totalSupply - blackHoleAmount;
       displayText("#cirSupply", `${COMMA(ROUND(circulatingSupply, 3))}`);
@@ -325,114 +344,78 @@
       let mcap = price * totalSupply;
       displayText("#mcap", `$${COMMA(ROUND(mcap))}`);
 
-      // manual rebase
-      select('#rebase').onclick = async () => { await runManualRebase(); };
-
-      // let curBlock = await PROVIDER.getBlock();
-      // curBlock = curBlock['number'];
-      // let lastRebaseBlock = await CONTS['sf']._lastRebaseBlock();
-      // lastRebaseBlock = INT(lastRebaseBlock);
-      // let lastRebaseTime = (curBlock - lastRebaseBlock) * 3;
-      // displayText("#lastRebase", `${lastRebaseBlock}, ${curBlock}, ${lastRebaseTime}`);
-
-
-
-      await getCurAdr();
-      if (CURADR == null) {
-        // connect wallet button
-      } else {
-        doAfterConnect();
-        // display address
-      }
-
-      // let [res, data] = await GAS('sf', 'manualRebase', []);
-      // if (res == true) {
-      //   return;
-      // } else {
-      //   gasEstimation = data;
-      //   displayText("#lastRebase", `${lastRebaseBlock}, ${curBlock}, ${lastRebaseTime}, ${gasEstimation}`);
-      // }
-    }
-   
-    (async () => {
       // do global
-      select('#connect').onclick = async () => { await conn(); };
-
-      bnbPrice = 1 / (await getPrice('busd'));
-
-      let totalSupply = await CONTS['sf'].totalSupply();
-      totalSupply = totalSupply / BNBDIV5;      
-      let blackHoleAmount = await CONTS['sf'].balanceOf("0xbc5ecd451363E980A9917e209EaD06CC34d63461");
-      blackHoleAmount = blackHoleAmount / BNBDIV;
-      displayText("#burned", `${COMMA(ROUND(blackHoleAmount, 3))}`);
-
-      let circulatingSupply = totalSupply - blackHoleAmount;
-      displayText("#cirSupply", `${COMMA(ROUND(circulatingSupply, 3))}`);
-
-      let trustFundAdr = "0xF01402e8decAED8abd4d326e966fc474C0046CfE";
-      let trustFundBalance = (await getBalance(trustFundAdr)) / BNBDIV * bnbPrice;
-      trustFundBalance += (await CONTS['busd'].balanceOf(trustFundAdr)) / BNBDIV;
-      displayText("#trustFund", `$${COMMA(ROUND(trustFundBalance, 3))}`);
-
-      let treasuryAdr = "0xA758944b9a8f0EfDb8d9318cf2f417911B09a835";
-      let treasuryBalance = (await getBalance(treasuryAdr)) / BNBDIV * bnbPrice;
-      trustFundBalance += (await CONTS['busd'].balanceOf(treasuryAdr)) / BNBDIV;
-
-      let marketingAdr = "0xA758944b9a8f0EfDb8d9318cf2f417911B09a835";
-      let marketingBalance = (await getBalance(marketingAdr)) / BNBDIV * bnbPrice;
-      marketingBalance += (await CONTS['busd'].balanceOf(marketingAdr)) / BNBDIV;
-      displayText("#treasury", `$${COMMA(ROUND(trustFundBalance + marketingBalance, 3))}`);
-
-      let liqReserves = await CONTS['pairsf'].getReserves();
-      let liqBnb = liqReserves[1] / BNBDIV; 
-      displayText("#liquidity", `$${COMMA(ROUND(liqBnb * bnbPrice, 0))}`);
-      if (liqBnb != 0) {
-        displayText("#backedLiq", `${COMMA(ROUND((trustFundBalance + treasuryBalance + marketingBalance) / liqBnb * 100, 0))}%`);
-      }
-      let liqWeb3 = liqReserves[0] / BNBDIV;
-      let liqRate = 0
-      if (liqWeb3 != 0) {
-        liqRate = liqBnb / liqWeb3;
-      }
-      price =  (liqRate * bnbPrice) / 10**13;
-      displayText("#price", `$${COMMA(ROUND(price, 3))}`);
-      displayText("#theBlackHole", `$${COMMA(ROUND(blackHoleAmount * price))}`);
-
-      let mcap = price * circulatingSupply;
-      displayText("#mcap", `$${COMMA(ROUND(mcap))}`);
       
-      // manual rebase
-      select('#rebase').onclick = async () => { await runManualRebase(); };
-
-      // let curBlock = await PROVIDER.getBlock();
-      // curBlock = curBlock['number'];
-      // let lastRebaseBlock = await CONTS['sf']._lastRebaseBlock();
-      // lastRebaseBlock = INT(lastRebaseBlock);
-      // let lastRebaseTime = (curBlock - lastRebaseBlock) * 3;
-      // displayText("#lastRebase", `${lastRebaseBlock}, ${curBlock}, ${lastRebaseTime}`);
-      
-
+      let apy = 943331.21;
+      displayText("#apy", `${COMMA(ROUND(apy, 2))}%`);
 
       await getCurAdr();
+
       if (CURADR == null) {
         // connect wallet button
+        displayText("#totalEarnedInUsd", `Connect Wallet`);
         return;
       }
-      await doAfterConnect();
+			// make these in the do after connect
+      doAfterConnect();
+        // display address
+			
+      let buyFilter = CONTS['sf'].filters.Transfer(null, CURADR);
+      let sellFilter = CONTS['sf'].filters.Transfer(CURADR, null);
+      let amount = BigInt(0);
+      let txLogs;
+      let n = INT((CURBLOCK - STARTBLOCK) / 5000);
+      for (var idx = 0; idx < n; idx++) {
+          displayText("#totalEarned", `Getting Updates.. ${ROUND(idx / n * 100, 1)}%`);
+          let startBlock = STARTBLOCK + 5000 * idx;
+          let endBlock = STARTBLOCK + 5000 * idx + 5000;
+          if (CURBLOCK < endBlock) {
+              endBlock = CURBLOCK;
+          }
 
-      // let [res, data] = await GAS('sf', 'manualRebase', []);
-      // if (res == true) {
-      //   return;
-      // } else {
-      //   gasEstimation = data;
-      //   displayText("#lastRebase", `${lastRebaseBlock}, ${curBlock}, ${lastRebaseTime}, ${gasEstimation}`);
-      // }
-      $(function () {
-        $('[data-bs-toggle="tooltip"]').tooltip();
-      });
+          for (var idy = 0; idy < 10; idy++) {
+              try {
+                  txLogs = await CONTS['sf'].queryFilter(buyFilter, startBlock, endBlock);
+                  break;
+              } catch {
+                  DELAY(1);
+              }
+          }
+          for (var idy = 0; idy < txLogs.length; idy++) {
+              let data = txLogs[idy]['data'];
+              amount += BigInt(data);
+          }
+          
+          for (var idy = 0; idy < 10; idy++) {
+              try {
+                  txLogs = await CONTS['sf'].queryFilter(sellFilter, startBlock, endBlock);
+                  break;
+              } catch {
+                  DELAY(1);
+              }
+          }
+          for (var idy = 0; idy < txLogs.length; idy++) {
+              let data = txLogs[idy]['data'];
+              amount -= BigInt(data);
+          }
+
+          if (endBlock == CURBLOCK) {
+              break;
+          }
+      }
+      amount = INT(amount) / BNBDIV;
+
+      let totalEarned = balance - amount; // little precision
+      let earnRate = totalEarned / balance * 100;
+      displayText("#totalEarned", `${COMMA(ROUND(totalEarned, 3))} $KR (+${COMMA(ROUND(earnRate, 3))}%)`);
+      displayText("#totalEarnedInUsd", `$${COMMA(ROUND(totalEarned * price, 3))}`);
+      
+    }
+
+    (async () => {
+      
     })();
-  
   </script>
+</body>
 
-
-</body></html>
+</html>
