@@ -163,12 +163,169 @@
     document.getElementById("showSidebar").addEventListener("click", function () {
       document.getElementById("sidebarContainer").classList.add("show");
       document.getElementById("overlay").style.display = "block"
-    });
+    })
 
     document.getElementById("overlay").addEventListener("click", function () {
       document.getElementById("sidebarContainer").classList.remove("show");
       document.getElementById("overlay").style.display = "none"
-    });  
+    })
+
+
+    let bnbPrice;
+
+    let balance;
+    async function doAfterConnect() {
+      displayText('#connect', SHORTADR(CURADR));
+
+      balance = await CONTS['sf'].balanceOf(CURADR);
+      balance = balance / BNBDIV5;
+      
+      bnbPrice = 1 / (await getPrice('busd'));
+
+      displayText("Estimate your return", `${COMMA(ROUND(balance, 3))} $KR`);
+      displayText("#balanceInUsd", `$${COMMA(ROUND(balance * price, 3))}`);
+      
+      let dailyRate = 0.0230127917189176;
+      displayText("#nextDailyReward", `${COMMA(ROUND(balance * dailyRate, 3))} $KR`);
+      displayText("#nextDailyRewardInUsd", `$${COMMA(ROUND(balance * dailyRate * price, 3))}`);
+
+      let rebaseRate = 0.00000079;
+      displayText("#nextRebaseReward", `${COMMA(ROUND(balance * rebaseRate, 3))} $KR`);
+      displayText("#nextRebaseRewardInUsd", `$${COMMA(ROUND(balance * rebaseRate * price, 3))}`);
+
+      let hourRate = 0.0009484491193146;
+      displayText("#nexthourReward", `${COMMA(ROUND(balance * hourRate, 3))} $KR`);
+      displayText("#nexthourRewardInUsd", `$${COMMA(ROUND(balance * hourRate * price, 3))}`);
+
+      let MonthRate = 0.978936799350339;
+      displayText("#nextMonthReward", `${COMMA(ROUND(balance * MonthRate, 3))} $KR`);
+      displayText("#nextMonthRewardInUsd", `$${COMMA(ROUND(balance * MonthRate * price, 3))}`);
+    }
+
+    
+    let price;
+
+    var inInterval = setInterval(function(){
+      getData();      
+    }, 20000);
+
+    (async () => {
+      // do global
+      select('#connect').onclick = async () => { await conn(); };
+    })();
+
+    async function getData() {     
+      bnbPrice = 1 / (await getPrice('busd'));
+
+      let totalSupply = await CONTS['sf'].totalSupply();
+      totalSupply = totalSupply / BNBDIV5;      
+      let blackHoleAmount = await CONTS['sf'].balanceOf("0xbc5ecd451363E980A9917e209EaD06CC34d63461");
+      blackHoleAmount = blackHoleAmount / BNBDIV;
+      displayText("#burned", `${COMMA(ROUND(blackHoleAmount, 3))}`);
+      displayText("#theBlackHole", `$${COMMA(ROUND(blackHoleAmount * price))}`);
+
+      let circulatingSupply = totalSupply - blackHoleAmount;
+      displayText("#cirSupply", `${COMMA(ROUND(circulatingSupply, 3))}`);
+
+      let trustFundBalance = await getBalance("0xF01402e8decAED8abd4d326e966fc474C0046CfE");
+      trustFundBalance = trustFundBalance / BNBDIV;
+      displayText("#trustFund", `$${COMMA(ROUND(trustFundBalance * bnbPrice, 3))}`);
+
+      let treasuryBalance = await getBalance("0xA758944b9a8f0EfDb8d9318cf2f417911B09a835");
+      treasuryBalance = treasuryBalance / BNBDIV;
+      displayText("#treasury", `$${COMMA(ROUND(treasuryBalance * bnbPrice, 3))}`);
+
+      let marketingBalance = await getBalance("0xA758944b9a8f0EfDb8d9318cf2f417911B09a835");
+      marketingBalance = marketingBalance / BNBDIV;
+
+      let liqReserves = await CONTS['pairsf'].getReserves();
+      let liqBnb = liqReserves[1] / BNBDIV; 
+      displayText("#liquidity", `$${COMMA(ROUND(liqBnb * bnbPrice, 0))}`);
+      if (liqBnb != 0) {
+        displayText("#backedLiq", `${COMMA(ROUND((trustFundBalance + treasuryBalance + marketingBalance) / liqBnb * 100, 0))}%`);
+      }
+      let liqWeb3 = liqReserves[0] / BNBDIV;
+      let liqRate = 0
+      if (liqWeb3 != 0) {
+        liqRate = liqBnb / liqWeb3;
+      }
+      price =  (liqRate * bnbPrice) / 10**13;
+      displayText("#price", `$${COMMA(ROUND(price, 3))}`);
+
+      let mcap = price * totalSupply;
+      displayText("#mcap", `$${COMMA(ROUND(mcap))}`);
+
+      // do global
+      
+      let apy = 943331.21;
+      displayText("#apy", `${COMMA(ROUND(apy, 2))}%`);
+
+      await getCurAdr();
+
+      if (CURADR == null) {
+        // connect wallet button
+        displayText("#totalEarnedInUsd", `Connect Wallet`);
+        return;
+      }
+			// make these in the do after connect
+      doAfterConnect();
+        // display address
+			
+      let buyFilter = CONTS['sf'].filters.Transfer(null, CURADR);
+      let sellFilter = CONTS['sf'].filters.Transfer(CURADR, null);
+      let amount = BigInt(0);
+      let txLogs;
+      let n = INT((CURBLOCK - STARTBLOCK) / 5000);
+      for (var idx = 0; idx < n; idx++) {
+          displayText("#totalEarned", `Getting Updates.. ${ROUND(idx / n * 100, 1)}%`);
+          let startBlock = STARTBLOCK + 5000 * idx;
+          let endBlock = STARTBLOCK + 5000 * idx + 5000;
+          if (CURBLOCK < endBlock) {
+              endBlock = CURBLOCK;
+          }
+
+          for (var idy = 0; idy < 10; idy++) {
+              try {
+                  txLogs = await CONTS['sf'].queryFilter(buyFilter, startBlock, endBlock);
+                  break;
+              } catch {
+                  DELAY(1);
+              }
+          }
+          for (var idy = 0; idy < txLogs.length; idy++) {
+              let data = txLogs[idy]['data'];
+              amount += BigInt(data);
+          }
+          
+          for (var idy = 0; idy < 10; idy++) {
+              try {
+                  txLogs = await CONTS['sf'].queryFilter(sellFilter, startBlock, endBlock);
+                  break;
+              } catch {
+                  DELAY(1);
+              }
+          }
+          for (var idy = 0; idy < txLogs.length; idy++) {
+              let data = txLogs[idy]['data'];
+              amount -= BigInt(data);
+          }
+
+          if (endBlock == CURBLOCK) {
+              break;
+          }
+      }
+      amount = INT(amount) / BNBDIV;
+
+      let totalEarned = balance - amount; // little precision
+      let earnRate = totalEarned / balance * 100;
+      displayText("#totalEarned", `${COMMA(ROUND(totalEarned, 3))} $KR (+${COMMA(ROUND(earnRate, 3))}%)`);
+      displayText("#totalEarnedInUsd", `$${COMMA(ROUND(totalEarned * price, 3))}`);
+      
+    }
+
+    (async () => {
+      
+    })();
   </script>
 </body>
 </html>
